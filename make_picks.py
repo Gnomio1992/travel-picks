@@ -28,7 +28,20 @@ def popga(pid):
             img = d.get('image') or []
             if isinstance(img, str):
                 img = [img]
+            link = re.search(r'preReservationLink\\?":\\?"(https?://[^"\\]+)', s)
+            kw = re.search(r'<meta[^>]+name="keywords"[^>]+content="([^"]*)"', s)
+            text = (d.get('description') or '') + ' ' + (html.unescape(kw.group(1)) if kw else '')
+            flat = text.replace(' ', '')
+            if re.search('예약필수|사전예약필수|예약제|사전예약자에한|예약자에한해', flat):
+                reserve = '예약 필수'
+            elif link:
+                reserve = '사전예약 있음 · 확인'
+            elif re.search('사전예약|네이버예약|예약', flat):
+                reserve = '예약 안내 있음 · 확인'
+            else:
+                reserve = '예약 안내 없음 · 현장 방문'
             return {
+                'reserve': reserve, 'reserveLink': link.group(1) if link else '',
                 'title': d.get('name', '').strip(),
                 'place': (loc.get('name') or '').strip(),
                 'addr': ((loc.get('address') or {}).get('streetAddress') or '').strip(),
@@ -65,6 +78,8 @@ def main():
             problems.append('팝가 %s: %s' % (row.get('id'), e))
             continue
         it.update(type=row.get('type', '팝업'), why=row.get('why', ''))
+        if row.get('reserve'):  # 직접 확인해 적은 값이 우선
+            it['reserve'] = row['reserve']
         items.append(it)
     key = None
     for row in inp.get('extra', []):
@@ -98,7 +113,7 @@ def main():
         it['region'] = region
         it['rank'] = len(out) + 1
         out.append({k: it.get(k, '') for k in (
-            'rank', 'type', 'title', 'place', 'addr', 'region', 'lat', 'lon', 'start', 'end', 'why', 'image', 'source', 'sourceName')})
+            'rank', 'type', 'title', 'place', 'addr', 'region', 'lat', 'lon', 'start', 'end', 'why', 'reserve', 'reserveLink', 'image', 'source', 'sourceName')})
 
     doc = {'updated': today, 'by': 'Claude가 웹을 훑어 고름', 'items': out}
     with open(os.path.join(HERE, 'picks.json'), 'w', encoding='utf-8', newline='\n') as f:
@@ -107,7 +122,7 @@ def main():
     sys.stdout.reconfigure(encoding='utf-8')
     print('picks.json: %d건 (기준일 %s)' % (len(out), today))
     for o in out:
-        print(' %2d %s | %s | %s ~ %s | %s' % (o['rank'], o['type'], o['title'], o['start'], o['end'], o['place']))
+        print(' %2d %s | %s | %s ~ %s | %s | %s' % (o['rank'], o['type'], o['title'], o['start'], o['end'], o['place'], o['reserve'] or '예약 확인 필요'))
     for p in problems:
         print(' ! ' + p)
 
