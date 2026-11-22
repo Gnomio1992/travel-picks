@@ -192,8 +192,8 @@ def build_yeyak():
                 lat = lon = 0.0
             if not (33 < lat < 39 and 124 < lon < 132):
                 continue
-            title = re.sub(r'\s+', ' ', r.get('SVCNM') or '').strip()
-            place = (r.get('PLACENM') or '').strip()
+            title = re.sub(r'\s+', ' ', html.unescape(html.unescape(r.get('SVCNM') or ''))).strip()
+            place = html.unescape(r.get('PLACENM') or '').strip()
             k = (re.sub(r'\d+', '#', title), place)  # 회차·달만 다른 같은 프로그램은 가장 이른 것 하나만
             if k in seen:
                 continue
