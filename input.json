@@ -90,19 +90,6 @@
    "sourceName": "서울시 블로그"
   },
   {
-   "type": "전시",
-   "title": "서도호의 현장들",
-   "place": "국립현대미술관 서울",
-   "geocode": "국립현대미술관 서울관",
-   "start": "2026-11-11",
-   "end": "2027-01-10",
-   "why": "국립현대미술관 서울 — 무료, 예약 필요",
-   "reserve": "예약 필수",
-   "image": "",
-   "source": "https://search.naver.com/search.naver?query=%EC%84%9C%EB%8F%84%ED%98%B8%EC%9D%98+%ED%98%84%EC%9E%A5%EB%93%A4+%EA%B5%AD%EB%A6%BD%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80",
-   "sourceName": "네이버 검색"
-  },
-  {
    "type": "행사",
    "title": "남산 한국숲정원 야간정원",
    "place": "남산공원 한국숲정원",
@@ -178,7 +165,8 @@
    "reserveLink": "https://yeyak.seoul.go.kr/",
    "source": "https://blog.naver.com/haechiseoul/224483479791",
    "image": "",
-   "sourceName": "서울시 블로그"
+   "sourceName": "서울시 블로그",
+   "yeyak": "전시온실 야간개장 사전예약"
   },
   {
    "type": "행사",
@@ -192,7 +180,8 @@
    "reserveLink": "https://yeyak.seoul.go.kr/",
    "source": "https://blog.naver.com/haechiseoul/224475440143",
    "image": "",
-   "sourceName": "서울시 블로그"
+   "sourceName": "서울시 블로그",
+   "yeyak": "빛모락 스토리투어"
   },
   {
    "type": "행사",

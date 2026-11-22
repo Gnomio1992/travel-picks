@@ -14,8 +14,9 @@
    "start": "2026-11-11",
    "end": "2026-11-29",
    "why": "팝가 실시간 인기 1위 — 사쿠라와 토모요의 티파티 콘셉트 콜라보 카페",
-   "reserve": "예약 안내 있음 · 확인",
-   "reserveLink": "",
+   "reserve": "사전예약 있음 · 팝가에서 예약",
+   "reserveLink": "https://popga.co.kr/popup/14622",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/popga-biz/1/beb212f4-462c-42b5-ab63-e687e82ccba5_thumbnail_MAIN_W480.webp",
    "source": "https://popga.co.kr/popup/14622",
    "sourceName": "팝가"
@@ -34,6 +35,7 @@
    "why": "팝가 실시간 인기 2위 — 더현대 서울, 11.27. 시작",
    "reserve": "사전예약 있음 · 확인",
    "reserveLink": "https://t.co/ZelKBYeyBf",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/spot/17712/main/7a57d29d-356c-48a2-93ad-e7cbdcab9224_1794466395744_thumbnail_MAIN_W480.webp",
    "source": "https://popga.co.kr/popup/17712",
    "sourceName": "팝가"
@@ -52,6 +54,7 @@
    "why": "서울시립미술관 무료 전시 — 서울시 블로그가 직접 다녀와 소개",
    "reserve": "예약 없이 입장",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "",
    "source": "https://blog.naver.com/haechiseoul/224475781345",
    "sourceName": "서울시 블로그"
@@ -70,6 +73,7 @@
    "why": "더현대 서울 크리스마스 빌리지 — 1985년 뉴욕 거리 콘셉트, 연말까지",
    "reserve": "사전예약 있음 · 확인",
    "reserveLink": "https://hi.thehyundai.com/o4o/reservation/detail/store?storeCd=400",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/spot/15537/main/f7200a1f-c46d-4307-9780-b97fffe90860_1793845635057_thumbnail.webp",
    "source": "https://popga.co.kr/popup/15537",
    "sourceName": "팝가"
@@ -86,8 +90,9 @@
    "start": "2026-11-06",
    "end": "2026-11-29",
    "why": "팝가 실시간 인기 4위 — 상수동 단독 팝업, 전원 경품 이벤트",
-   "reserve": "예약 안내 없음 · 현장 방문",
+   "reserve": "예약 없이 입장",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/popga-biz/185/39a630c6-c5c7-4d75-aca0-2791d51e2383_thumbnail_MAIN_W480.webp",
    "source": "https://popga.co.kr/popup/13915",
    "sourceName": "팝가"
@@ -106,6 +111,7 @@
    "why": "11.24. 개막 — 1900~1970년대 회화·조각·도자 65점, 성인 25,000원",
    "reserve": "",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "",
    "source": "https://search.naver.com/search.naver?query=%ED%90%81%ED%94%BC%EB%91%90%EC%84%BC%ED%84%B0+%ED%95%9C%ED%99%94+%EC%A0%84%EC%8B%9C",
    "sourceName": "네이버 검색"
@@ -123,7 +129,8 @@
    "end": "2026-12-27",
    "why": "팝가 실시간 인기 5위 — 산리오 크리스마스 한정 굿즈, 11.25. 시작",
    "reserve": "예약 안내 있음 · 확인",
-   "reserveLink": "",
+   "reserveLink": "https://popga.co.kr/popup/17705",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/spot/17705/main/60b7c823-463c-460f-9d17-056e915beadf_1794457419090_thumbnail_MAIN_W480.webp",
    "source": "https://popga.co.kr/popup/17705",
    "sourceName": "팝가"
@@ -142,6 +149,7 @@
    "why": "팝가 실시간 인기 6위 — 수사관이 되어 단서를 찾는 체험형 팝업",
    "reserve": "예약 안내 없음 · 현장 방문",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/popga-biz/6/71a0f495-8215-49f0-943b-69de7422ae7f.jpg",
    "source": "https://popga.co.kr/popup/17256",
    "sourceName": "팝가"
@@ -160,6 +168,7 @@
    "why": "세종문화회관 뒤뜰 겨울마켓 — 입장료 없음",
    "reserve": "예약 없이 입장",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "",
    "source": "https://blog.naver.com/haechiseoul/224481699820",
    "sourceName": "서울시 블로그"
@@ -178,6 +187,7 @@
    "why": "팝가 실시간 인기 7위 — 익선동, 11.27. 시작",
    "reserve": "사전예약 있음 · 확인",
    "reserveLink": "https://booking.naver.com/booking/12/bizes/1780281",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/spot/17714/main/1cf33a02-cc21-4fb5-8fc4-de999f6879cc_1794468881670_thumbnail_MAIN_W480.webp",
    "source": "https://popga.co.kr/popup/17714",
    "sourceName": "팝가"
@@ -196,27 +206,29 @@
    "why": "국내 첫 짱구 체험 전시 — 팝가 이달의 Pick",
    "reserve": "예약 안내 없음 · 현장 방문",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/spot/8902/main/d2498a75-b184-4368-9912-9b149773e50b_1788824642342_thumbnail_MAIN_W480.webp",
    "source": "https://popga.co.kr/popup/8902",
    "sourceName": "팝가"
   },
   {
    "rank": 12,
-   "type": "전시",
-   "title": "서도호의 현장들",
-   "place": "국립현대미술관 서울",
-   "addr": "서울 종로구 삼청로 30",
+   "type": "행사",
+   "title": "남산 한국숲정원 야간정원",
+   "place": "남산공원 한국숲정원",
+   "addr": "서울 중구 남산공원길 125-54",
    "region": "서울",
-   "lat": 37.578627489574416,
-   "lon": 126.9800979573524,
-   "start": "2026-11-11",
-   "end": "2027-01-10",
-   "why": "국립현대미술관 서울 — 무료, 예약 필요",
-   "reserve": "예약 필수",
+   "lat": 37.5524979951415,
+   "lon": 126.989316855952,
+   "start": "2026-11-18",
+   "end": "2026-12-22",
+   "why": "11.18. 개장 — 일몰 15분 뒤부터 밤 11시까지 야간 산책",
+   "reserve": "예약 안내 없음 · 현장 방문",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "",
-   "source": "https://search.naver.com/search.naver?query=%EC%84%9C%EB%8F%84%ED%98%B8%EC%9D%98+%ED%98%84%EC%9E%A5%EB%93%A4+%EA%B5%AD%EB%A6%BD%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80",
-   "sourceName": "네이버 검색"
+   "source": "https://blog.naver.com/haechiseoul/224482185608",
+   "sourceName": "서울시 블로그"
   },
   {
    "rank": 13,
@@ -232,6 +244,7 @@
    "why": "팝가 실시간 인기 9위 — 산나비 3주년 콜라보 카페",
    "reserve": "예약 안내 없음 · 현장 방문",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/spot/14061/main/c0146db7-ff7c-4607-9965-4797269c80ae_1792044973008_thumbnail_MAIN_W480.webp",
    "source": "https://popga.co.kr/popup/14061",
    "sourceName": "팝가"
@@ -250,27 +263,29 @@
    "why": "팝가 실시간 인기 10위 — 스누피와 함께하는 MAMA 공식 팝업, 곧 종료",
    "reserve": "예약 안내 없음 · 현장 방문",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/spot/18024/main/d1e09165-b49a-468f-b863-9b5dfc6a99b8_1794816144334_thumbnail_MAIN_W480.webp",
    "source": "https://popga.co.kr/popup/18024",
    "sourceName": "팝가"
   },
   {
    "rank": 15,
-   "type": "행사",
-   "title": "남산 한국숲정원 야간정원",
-   "place": "남산공원 한국숲정원",
-   "addr": "서울 중구 남산공원길 125-54",
+   "type": "전시",
+   "title": "MATERIALISM — BIG 기획전",
+   "place": "서울도시건축전시관",
+   "addr": "서울 중구 세종대로 119",
    "region": "서울",
-   "lat": 37.5524979951415,
-   "lon": 126.989316855952,
-   "start": "2026-11-18",
-   "end": "2026-12-22",
-   "why": "11.18. 개장 — 일몰 15분 뒤부터 밤 11시까지 야간 산책",
-   "reserve": "예약 안내 없음 · 현장 방문",
+   "lat": 37.56690492421112,
+   "lon": 126.97670535593808,
+   "start": "2026-11-07",
+   "end": "2027-02-28",
+   "why": "덴마크 건축그룹 BIG 국내 첫 기획전 — 무료, 예약 없이, 월요일 휴관",
+   "reserve": "예약 없이 입장",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "",
-   "source": "https://blog.naver.com/haechiseoul/224482185608",
-   "sourceName": "서울시 블로그"
+   "source": "https://search.naver.com/search.naver?query=MATERIALISM+%EC%84%9C%EC%9A%B8%EB%8F%84%EC%8B%9C%EA%B1%B4%EC%B6%95%EC%A0%84%EC%8B%9C%EA%B4%80",
+   "sourceName": "네이버 검색"
   },
   {
    "rank": 16,
@@ -286,6 +301,7 @@
    "why": "포켓몬·원피스·유희왕 카드 30종 이상 — 팝가 이달의 Pick",
    "reserve": "사전예약 있음 · 확인",
    "reserveLink": "https://www.popcondplay.com/reserve/view/113",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/spot/16615/main/cf7528c0-b39c-460f-a803-a78f2a2056bd_1793941075841_thumbnail.webp",
    "source": "https://popga.co.kr/popup/16615",
    "sourceName": "팝가"
@@ -304,30 +320,13 @@
    "why": "UGG 홀리데이 시즌 팝업 — 팝가 이달의 Pick",
    "reserve": "예약 안내 없음 · 현장 방문",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "https://cdn.popga.co.kr/spot/16610/main/819c2837-fa44-4bca-995a-9fff13e40143_1793875958560_thumbnail.webp",
    "source": "https://popga.co.kr/popup/16610",
    "sourceName": "팝가"
   },
   {
    "rank": 18,
-   "type": "전시",
-   "title": "MATERIALISM — BIG 기획전",
-   "place": "서울도시건축전시관",
-   "addr": "서울 중구 세종대로 119",
-   "region": "서울",
-   "lat": 37.56690492421112,
-   "lon": 126.97670535593808,
-   "start": "2026-11-07",
-   "end": "2027-02-28",
-   "why": "덴마크 건축그룹 BIG 국내 첫 기획전 — 무료, 예약 없이, 월요일 휴관",
-   "reserve": "예약 없이 입장",
-   "reserveLink": "",
-   "image": "",
-   "source": "https://search.naver.com/search.naver?query=MATERIALISM+%EC%84%9C%EC%9A%B8%EB%8F%84%EC%8B%9C%EA%B1%B4%EC%B6%95%EC%A0%84%EC%8B%9C%EA%B4%80",
-   "sourceName": "네이버 검색"
-  },
-  {
-   "rank": 19,
    "type": "전시",
    "title": "서울시청 어린이 전시 '서울탐험대'",
    "place": "서울특별시청",
@@ -340,12 +339,13 @@
    "why": "서울시청 실내 체험 전시 — 무료",
    "reserve": "예약 없이 입장",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "",
    "source": "https://blog.naver.com/haechiseoul/224484525783",
    "sourceName": "서울시 블로그"
   },
   {
-   "rank": 20,
+   "rank": 19,
    "type": "전시",
    "title": "파인캐릭터 2026",
    "place": "DDP 쇼룸",
@@ -358,12 +358,13 @@
    "why": "사흘만 여는 캐릭터 아트 전시",
    "reserve": "",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "",
    "source": "https://search.naver.com/search.naver?query=%ED%8C%8C%EC%9D%B8%EC%BA%90%EB%A6%AD%ED%84%B0+2026+DDP",
    "sourceName": "네이버 검색"
   },
   {
-   "rank": 21,
+   "rank": 20,
    "type": "전시",
    "title": "서울식물원 겨울 전시 「겨울과 식물사이」",
    "place": "서울식물원 전시온실",
@@ -376,12 +377,13 @@
    "why": "크리스마스 정원·기획전시 — 온실은 입장권 구매 후 관람",
    "reserve": "예약 없이 입장",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "",
    "source": "https://blog.naver.com/haechiseoul/224475787578",
    "sourceName": "서울시 블로그"
   },
   {
-   "rank": 22,
+   "rank": 21,
    "type": "행사",
    "title": "서울식물원 온실 야간개장 (11월)",
    "place": "서울식물원 온실",
@@ -392,14 +394,20 @@
    "start": "2026-11-27",
    "end": "2026-11-28",
    "why": "저녁 6시 30분~8시 30분 · 1인 5,000원 — 11월분은 마감, 취소분만 예약 가능",
-   "reserve": "예약 필수",
-   "reserveLink": "https://yeyak.seoul.go.kr/",
+   "reserve": "예약 필수 · 지금은 마감(취소분만)",
+   "reserveLink": "https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=S261102100634309493",
+   "reserveLinks": [
+    {
+     "label": "예약마감 · 11월 전시온실 야간개장 사전예약",
+     "url": "https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=S261102100634309493"
+    }
+   ],
    "image": "",
    "source": "https://blog.naver.com/haechiseoul/224483479791",
    "sourceName": "서울시 블로그"
   },
   {
-   "rank": 23,
+   "rank": 22,
    "type": "행사",
    "title": "광화문광장 빛모락 스토리투어",
    "place": "광화문광장",
@@ -411,13 +419,23 @@
    "end": "2026-12-05",
    "why": "금·토 운영 — 미디어아트·역사 투어, 회차 30명 선착순",
    "reserve": "예약 필수",
-   "reserveLink": "https://yeyak.seoul.go.kr/",
+   "reserveLink": "https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=S261112160552632191",
+   "reserveLinks": [
+    {
+     "label": "접수중 · 야간 문화투어 (금요일)",
+     "url": "https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=S261112160552632191"
+    },
+    {
+     "label": "접수중 · 주간 역사투어 (토요일)",
+     "url": "https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=S261113105317832897"
+    }
+   ],
    "image": "",
    "source": "https://blog.naver.com/haechiseoul/224475440143",
    "sourceName": "서울시 블로그"
   },
   {
-   "rank": 24,
+   "rank": 23,
    "type": "행사",
    "title": "남산둘레길 가을소풍",
    "place": "남산공원",
@@ -430,12 +448,13 @@
    "why": "남산둘레길 투어·전통활쏘기·사진전 — 11월 말까지",
    "reserve": "예약 안내 있음 · 확인",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "",
    "source": "https://blog.naver.com/haechiseoul/224467333504",
    "sourceName": "서울시 블로그"
   },
   {
-   "rank": 25,
+   "rank": 24,
    "type": "행사",
    "title": "서울시청 하늘전망대 야간 개방 확대",
    "place": "서울시청 하늘전망대",
@@ -448,6 +467,7 @@
    "why": "무료 야경 — 12.24.·12.31.은 자정까지",
    "reserve": "예약 없이 입장",
    "reserveLink": "",
+   "reserveLinks": "",
    "image": "",
    "source": "https://blog.naver.com/haechiseoul/224483440988",
    "sourceName": "서울시 블로그"

@@ -32,16 +32,23 @@ def popga(pid):
             kw = re.search(r'<meta[^>]+name="keywords"[^>]+content="([^"]*)"', s)
             text = (d.get('description') or '') + ' ' + (html.unescape(kw.group(1)) if kw else '')
             flat = text.replace(' ', '')
-            if re.search('예약필수|사전예약필수|예약제|사전예약자에한|예약자에한해', flat):
+            page = 'https://popga.co.kr/popup/%d' % pid
+            notice = re.sub(r'\s+', '', html.unescape(s.replace('\\"', '"')))
+            rlink = link.group(1) if link else ''
+            if re.search('사전예약없이|예약없이|예약불필요', flat) or re.search('별도의사전예약없이|예약없이자유롭게', notice):
+                reserve, rlink = '예약 없이 입장', ''
+            elif re.search('예약필수|사전예약필수|예약제|사전예약자에한|예약자에한해', flat):
                 reserve = '예약 필수'
-            elif link:
+            elif rlink:
                 reserve = '사전예약 있음 · 확인'
+            elif re.search('팝가단독예약|"isPopgaReservation":true', notice):
+                reserve, rlink = '사전예약 있음 · 팝가에서 예약', page
             elif re.search('사전예약|네이버예약|예약', flat):
-                reserve = '예약 안내 있음 · 확인'
+                reserve, rlink = '예약 안내 있음 · 확인', page  # 예약 주소가 따로 없으면 안내가 실린 팝가 화면으로
             else:
                 reserve = '예약 안내 없음 · 현장 방문'
             return {
-                'reserve': reserve, 'reserveLink': link.group(1) if link else '',
+                'reserve': reserve, 'reserveLink': rlink,
                 'title': d.get('name', '').strip(),
                 'place': (loc.get('name') or '').strip(),
                 'addr': ((loc.get('address') or {}).get('streetAddress') or '').strip(),
@@ -94,6 +101,22 @@ def main():
             it['lat'], it['lon'] = g[0], g[1]
             it.setdefault('addr', g[2])
         it.pop('geocode', None)
+        kw = it.pop('yeyak', '')
+        if kw:
+            found = [r for r in yeyak_all() if kw.replace(' ', '') in html.unescape(r.get('SVCNM') or '').replace(' ', '')]
+            found.sort(key=lambda r: (r.get('SVCSTATNM') != '접수중', r.get('SVCOPNBGNDT') or ''))
+            links = []
+            for r in found[:4]:
+                name = re.sub(r'\s+', ' ', html.unescape(r.get('SVCNM') or '')).strip()
+                short = name.split(']')[-1].strip() or name
+                links.append({'label': '%s · %s' % (r.get('SVCSTATNM') or '', short[:24]), 'url': r.get('SVCURL') or ''})
+            if links:
+                it['reserveLinks'] = links
+                it['reserveLink'] = links[0]['url']
+                if all(r.get('SVCSTATNM') != '접수중' for r in found):
+                    it['reserve'] = '예약 필수 · 지금은 마감(취소분만)'
+            else:
+                problems.append('공공예약에서 못 찾음: %s (%s)' % (it['title'], kw))
         if it.pop('ongoing', False) and not it.get('end'):
             # 끝나는 날이 정해지지 않은 상시 운영 — 갱신할 때마다 30일 뒤까지로 둠
             it['end'] = (datetime.date.today() + datetime.timedelta(days=30)).isoformat()
@@ -124,7 +147,7 @@ def main():
         it['region'] = region
         it['rank'] = len(out) + 1
         out.append({k: it.get(k, '') for k in (
-            'rank', 'type', 'title', 'place', 'addr', 'region', 'lat', 'lon', 'start', 'end', 'why', 'reserve', 'reserveLink', 'image', 'source', 'sourceName')})
+            'rank', 'type', 'title', 'place', 'addr', 'region', 'lat', 'lon', 'start', 'end', 'why', 'reserve', 'reserveLink', 'reserveLinks', 'image', 'source', 'sourceName')})
 
     doc = {'updated': today, 'by': 'Claude가 웹을 훑어 고름', 'items': out}
     with open(os.path.join(HERE, 'picks.json'), 'w', encoding='utf-8', newline='\n') as f:
@@ -138,8 +161,7 @@ def main():
         print(' ! ' + p)
 
 
-if __name__ == '__main__':
-    main()
+
 
 
 # ───────── 서울시 공공서비스예약(yeyak.seoul.go.kr) — 지금 예약되는 문화체험·교육 프로그램 ─────────
@@ -171,6 +193,23 @@ def yeyak_rows(service, key):
         if key == 'sample' or not got or start + step > total:
             return rows, total
         start += step
+
+
+_YEYAK_ALL = None
+
+
+def yeyak_all():
+    # 서울시 공공예약 전체 행 (한 번만 받아 둠) — 직접 고른 항목의 예약 주소를 찾는 데도 씀
+    global _YEYAK_ALL
+    if _YEYAK_ALL is None:
+        _YEYAK_ALL = []
+        key = seoul_key()
+        for service in SEOUL_SERVICES:
+            try:
+                _YEYAK_ALL += yeyak_rows(service, key)[0]
+            except Exception:
+                pass
+    return _YEYAK_ALL
 
 
 def build_yeyak():
@@ -229,4 +268,5 @@ def build_yeyak():
 
 
 if __name__ == '__main__':
+    main()
     build_yeyak()
