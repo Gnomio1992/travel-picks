@@ -82,6 +82,7 @@ def main():
             it['reserve'] = row['reserve']
         items.append(it)
     key = None
+    extras = []
     for row in inp.get('extra', []):
         it = dict(row)
         if it.get('lat') is None or it.get('lon') is None:
@@ -93,7 +94,17 @@ def main():
             it['lat'], it['lon'] = g[0], g[1]
             it.setdefault('addr', g[2])
         it.pop('geocode', None)
-        items.append(it)
+        if it.pop('ongoing', False) and not it.get('end'):
+            # 끝나는 날이 정해지지 않은 상시 운영 — 갱신할 때마다 30일 뒤까지로 둠
+            it['end'] = (datetime.date.today() + datetime.timedelta(days=30)).isoformat()
+        extras.append(it)
+    # 팝가 순위 둘에 직접 고른 것(전시·서울시 블로그) 하나씩 섞어 한쪽으로 쏠리지 않게
+    popga_items, items = items, []
+    while popga_items or extras:
+        items += popga_items[:2]
+        popga_items = popga_items[2:]
+        if extras:
+            items.append(extras.pop(0))
 
     out = []
     for it in items:
