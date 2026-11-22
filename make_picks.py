@@ -129,3 +129,93 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# ───────── 서울시 공공서비스예약(yeyak.seoul.go.kr) — 지금 예약되는 문화체험·교육 프로그램 ─────────
+# 서울 열린데이터광장 공식 API를 씀 (예약 사이트 목록 화면은 robots.txt 로 수집을 막아 둠).
+# 인증키: 환경변수 SEOUL_KEY 또는 이 폴더의 .seoul_key (git 에 올리지 않음). 없으면 견본 키라 서비스마다 5건만 나옴.
+SEOUL_SERVICES = ['ListPublicReservationCulture', 'ListPublicReservationEducation']
+GYEONGGI = ('고양시', '과천시', '남양주시', '하남시', '포천시', '양평군', '광주시', '구리시', '성남시', '의정부시')
+
+
+def seoul_key():
+    k = os.environ.get('SEOUL_KEY', '').strip()
+    f = os.path.join(HERE, '.seoul_key')
+    if not k and os.path.exists(f):
+        k = open(f, encoding='utf-8-sig').read().strip()
+    return k or 'sample'
+
+
+def yeyak_rows(service, key):
+    rows, start, step = [], 1, (5 if key == 'sample' else 1000)
+    while True:
+        u = 'http://openapi.seoul.go.kr:8088/%s/json/%s/%d/%d/' % (key, service, start, start + step - 1)
+        d = json.loads(get(u))
+        body = d.get(service)
+        if not body:
+            raise RuntimeError('%s: %s' % (service, json.dumps(d, ensure_ascii=False)[:200]))
+        got = body.get('row') or []
+        rows += got
+        total = int(body.get('list_total_count') or 0)
+        if key == 'sample' or not got or start + step > total:
+            return rows, total
+        start += step
+
+
+def build_yeyak():
+    key = seoul_key()
+    today = datetime.date.today()
+    horizon = (today + datetime.timedelta(days=30)).isoformat()
+    now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+    out, seen, notes = [], set(), []
+    for service in SEOUL_SERVICES:
+        try:
+            rows, total = yeyak_rows(service, key)
+        except Exception as e:
+            notes.append('%s 실패: %s' % (service, e))
+            continue
+        notes.append('%s: 전체 %d건 중 %d건 받음' % (service, total, len(rows)))
+        for r in rows:
+            use_s, use_e = (r.get('SVCOPNBGNDT') or '')[:10], (r.get('SVCOPNENDDT') or '')[:10]
+            rc_s, rc_e = (r.get('RCPTBGNDT') or '')[:16], (r.get('RCPTENDDT') or '')[:16]
+            if not use_s or not use_e or use_e < today.isoformat() or use_s > horizon:
+                continue
+            if r.get('SVCSTATNM') not in ('접수중', '안내중') or (rc_e and rc_e < now):
+                continue  # 접수가 끝났거나 일시정지된 것은 뺌
+            area = (r.get('AREANM') or '').strip()
+            region = '서울' if area.endswith('구') else ('경기' if area in GYEONGGI else '')
+            if not region or r.get('MINCLASSNM') in ('서울형키즈카페', '단체봉사'):
+                continue
+            try:
+                lat, lon = float(r.get('Y') or 0), float(r.get('X') or 0)
+            except ValueError:
+                lat = lon = 0.0
+            if not (33 < lat < 39 and 124 < lon < 132):
+                continue
+            title = re.sub(r'\s+', ' ', r.get('SVCNM') or '').strip()
+            place = (r.get('PLACENM') or '').strip()
+            k = (re.sub(r'\d+', '#', title), place)  # 회차·달만 다른 같은 프로그램은 가장 이른 것 하나만
+            if k in seen:
+                continue
+            seen.add(k)
+            out.append({
+                'id': r.get('SVCID'), 'title': title, 'big': r.get('MAXCLASSNM') or '',
+                'cat': r.get('MINCLASSNM') or '', 'status': r.get('SVCSTATNM') or '',
+                'pay': (r.get('PAYATNM') or '').strip(), 'place': place, 'area': area, 'region': region,
+                'target': (r.get('USETGTINFO') or '').strip(), 'url': r.get('SVCURL') or '',
+                'lat': lat, 'lon': lon, 'start': use_s, 'end': use_e, 'rcptStart': rc_s, 'rcptEnd': rc_e,
+                'image': r.get('IMGURL') or '',
+            })
+    out.sort(key=lambda o: (o['rcptEnd'] or '9999', o['start']))
+    doc = {'updated': today.isoformat(), 'source': '서울 열린데이터광장 · 서울시 공공서비스예약',
+           'sample': key == 'sample', 'items': out}
+    with open(os.path.join(HERE, 'yeyak.json'), 'w', encoding='utf-8', newline='\n') as f:
+        json.dump(doc, f, ensure_ascii=False, separators=(',', ':'))
+        f.write('\n')
+    print('yeyak.json: %d건%s' % (len(out), ' (견본 키 — 인증키를 넣으면 전체가 나옴)' if key == 'sample' else ''))
+    for n in notes:
+        print(' - ' + n)
+
+
+if __name__ == '__main__':
+    build_yeyak()
