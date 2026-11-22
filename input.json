@@ -1,0 +1,33 @@
+{
+ "popga": [
+  {"id": 14622, "why": "팝가 실시간 인기 1위 — 사쿠라와 토모요의 티파티 콘셉트 콜라보 카페"},
+  {"id": 17712, "why": "팝가 실시간 인기 2위 — 더현대 서울, 11.27. 시작"},
+  {"id": 15537, "why": "더현대 서울 크리스마스 빌리지 — 1985년 뉴욕 거리 콘셉트, 연말까지"},
+  {"id": 13915, "why": "팝가 실시간 인기 4위 — 상수동 단독 팝업, 전원 경품 이벤트"},
+  {"id": 17705, "why": "팝가 실시간 인기 5위 — 산리오 크리스마스 한정 굿즈, 11.25. 시작"},
+  {"id": 17256, "why": "팝가 실시간 인기 6위 — 수사관이 되어 단서를 찾는 체험형 팝업"},
+  {"id": 17714, "why": "팝가 실시간 인기 7위 — 익선동, 11.27. 시작"},
+  {"id": 8902, "type": "전시", "why": "국내 첫 짱구 체험 전시 — 팝가 이달의 Pick"},
+  {"id": 14061, "why": "팝가 실시간 인기 9위 — 산나비 3주년 콜라보 카페"},
+  {"id": 18024, "why": "팝가 실시간 인기 10위 — 스누피와 함께하는 MAMA 공식 팝업, 곧 종료"},
+  {"id": 16615, "why": "포켓몬·원피스·유희왕 카드 30종 이상 — 팝가 이달의 Pick"},
+  {"id": 16610, "why": "UGG 홀리데이 시즌 팝업 — 팝가 이달의 Pick"}
+ ],
+ "extra": [
+  {"type": "전시", "title": "퐁피두센터 한화 두 번째 소장품전", "place": "퐁피두센터 한화 (63빌딩 별관)", "geocode": "63빌딩",
+   "start": "2026-11-24", "end": "2027-03-28", "why": "11.24. 개막 — 1900~1970년대 회화·조각·도자 65점, 성인 25,000원",
+   "image": "", "source": "https://search.naver.com/search.naver?query=%ED%90%81%ED%94%BC%EB%91%90%EC%84%BC%ED%84%B0+%ED%95%9C%ED%99%94+%EC%A0%84%EC%8B%9C", "sourceName": "네이버 검색"},
+  {"type": "전시", "title": "서도호의 현장들", "place": "국립현대미술관 서울", "geocode": "국립현대미술관 서울관",
+   "start": "2026-11-11", "end": "2027-01-10", "why": "국립현대미술관 서울 — 무료, 예약 필요",
+   "image": "", "source": "https://search.naver.com/search.naver?query=%EC%84%9C%EB%8F%84%ED%98%B8%EC%9D%98+%ED%98%84%EC%9E%A5%EB%93%A4+%EA%B5%AD%EB%A6%BD%ED%98%84%EB%8C%80%EB%AF%B8%EC%88%A0%EA%B4%80", "sourceName": "네이버 검색"},
+  {"type": "전시", "title": "MATERIALISM — BIG 기획전", "place": "서울도시건축전시관", "geocode": "서울도시건축전시관",
+   "start": "2026-11-07", "end": "2027-02-28", "why": "덴마크 건축그룹 BIG 국내 첫 기획전 — 무료, 예약 없이, 월요일 휴관",
+   "image": "", "source": "https://search.naver.com/search.naver?query=MATERIALISM+%EC%84%9C%EC%9A%B8%EB%8F%84%EC%8B%9C%EA%B1%B4%EC%B6%95%EC%A0%84%EC%8B%9C%EA%B4%80", "sourceName": "네이버 검색"},
+  {"type": "전시", "title": "린 허쉬만 리슨: 나의 [나]들", "place": "서울시립미술관 서소문본관", "geocode": "서울시립미술관 서소문본관",
+   "end": "2027-02-21", "why": "서울시 공식 블로그가 직접 다녀와 소개한 전시",
+   "image": "", "source": "https://blog.naver.com/haechiseoul/224475781345", "sourceName": "서울시 블로그"},
+  {"type": "전시", "title": "파인캐릭터 2026", "place": "DDP 쇼룸", "geocode": "동대문디자인플라자",
+   "start": "2026-11-27", "end": "2026-11-29", "why": "사흘만 여는 캐릭터 아트 전시",
+   "image": "", "source": "https://search.naver.com/search.naver?query=%ED%8C%8C%EC%9D%B8%EC%BA%90%EB%A6%AD%ED%84%B0+2026+DDP", "sourceName": "네이버 검색"}
+ ]
+}
